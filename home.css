@@ -56,6 +56,10 @@ button:hover {
     background-color: #793c00;
 }
 
+h1{
+    background-color: rgb(197, 255, 121);
+}
+
 /* 中央の鍋画像 */
 .center-section {
     flex-grow: 1;
