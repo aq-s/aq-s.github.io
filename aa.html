@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鍋の食材入力</title>
     <link rel="stylesheet" href="cc.css">
 </head>
+
 <body>
     <header>
         <div class="header-bar"></div>
@@ -13,10 +15,12 @@
 
     <main>
         <div class="container">
-            <div class="left-section">
-                <input type="text" id="inputField" placeholder="ここに食材を入力してください">
-                <button id="submitButton">決定</button>
-            </div>
+            <form action="/add" method="post">
+                <div class="left-section">
+                    <input type="text" id="inputField" name="ingredient" placeholder="ここに食材を入力してください">
+                    <button type="submit" id="submitButton">決定</button>
+                </div>
+            </form>
             <div class="center-section">
                 <img src="nabe.png" alt="鍋のイラスト" class="nabe-image">
 
@@ -33,4 +37,5 @@
 
     <script src="bb.js"></script>
 </body>
+
 </html>
