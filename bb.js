@@ -32,6 +32,22 @@ document.getElementById('submitButton').addEventListener('click', function () {
                     
         });
 
+                // 食材の数によって鍋の画像を切り替える関数
+        function updateNabeImage() {
+            const displayArea = document.getElementById('displayArea');
+            const nabeImage = document.getElementById('nabeImage');
+    
+            if (displayArea.children.length > 0) {
+                nabeImage.src = "babehatena.png"; // 食材がある場合
+            } else {
+                nabeImage.src = "nabe.png"; // 食材がない場合
+            }
+        }
+        
+        // 画像を更新
+        updateNabeImage();
+
+
     }
 });
 
