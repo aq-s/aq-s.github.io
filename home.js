@@ -6,6 +6,7 @@ document.getElementById('submitButton').addEventListener('click', function () {
         // 新しい要素を作成
         const newItem = document.createElement('div');
         newItem.textContent = inputField.value;
+        
 
         // 削除ボタンを作成
         const deleteBtn = document.createElement('span');
@@ -26,6 +27,19 @@ document.getElementById('submitButton').addEventListener('click', function () {
         //調理ボタン
         const cooking = document.createElement('ga');
         cooking.textContent = inputField.value;
+        // Pythonにデータを送信
+　　　　fetch('/receive_tags/', {
+    　　　　method: 'POST',
+    　　　　headers: { 'Content-Type': 'application/json' },
+    　　　　body: JSON.stringify({ message: inputField.value })
+　　　　})
+　　　　.then(response => response.json())
+　　　　.then(data => {
+　　　　alert(`Pythonからの応答: ${data.reply}`);
+　　　　})
+　　　　.catch(error => {
+　　　　    console.error('Error:', error);
+　　　　});
         
         // 調理ボタンの機能
         cooking.addEventListener('click', function () {
