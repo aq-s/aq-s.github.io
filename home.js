@@ -27,23 +27,22 @@ document.getElementById('submitButton').addEventListener('click', function () {
         //調理ボタン
         const cooking = document.createElement('ga');
         cooking.textContent = inputField.value;
-        // Pythonにデータを送信
-　　　　fetch('/receive_tags/', {
-    　　　　method: 'POST',
-    　　　　headers: { 'Content-Type': 'application/json' },
-    　　　　body: JSON.stringify({ message: inputField.value })
-　　　　})
-　　　　.then(response => response.json())
-　　　　.then(data => {
-　　　　alert(`Pythonからの応答: ${data.reply}`);
-　　　　})
-　　　　.catch(error => {
-　　　　    console.error('Error:', error);
-　　　　});
         
         // 調理ボタンの機能
         cooking.addEventListener('click', function () {
-                    
+        // Pythonにデータを送信
+　　　　　　　　fetch('/receive_tags/', {
+    　　　　　　　　method: 'POST',
+    　　　　　　　　headers: { 'Content-Type': 'application/json' },
+    　　　　　　　　body: JSON.stringify({ message: inputField.value })
+　　　　　　　　})
+　　　　　　　　.then(response => response.json())
+　　　　　　　　.then(data => {
+　　　　　　　　alert(`Pythonからの応答: ${data.reply}`);
+　　　　　　　　})
+　　　　　　　　.catch(error => {
+　　　　　　　　    console.error('Error:', error);
+　　　　　　　　});           
         });
 
                 // 食材の数によって鍋の画像を切り替える関数
